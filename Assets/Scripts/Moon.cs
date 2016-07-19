@@ -22,25 +22,19 @@ public class Moon : MonoBehaviour {
 	{
 		if (GameObject.FindWithTag("Player") != null && player == null)
 		{
-			print("got the player!");
 			player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		}
 	}
 
 	void UpdateVolume ()
 	{
-		RaycastHit hitInfo;
-
-		if (Physics.Linecast(transform.position, player.transform.position, out hitInfo))
+		if (player.inLight)
 		{
-			if (hitInfo.collider.tag == "Player")
-			{
-				audioSource.volume = 1f;
-			}
-			else
-			{
-				audioSource.volume = 0.5f;
-			}
+			audioSource.volume = 1f;
+		}
+		else
+		{
+			audioSource.volume = 0.2f;
 		}
 	}
 }
