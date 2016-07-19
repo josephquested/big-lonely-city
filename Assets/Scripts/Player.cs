@@ -4,6 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	Transform moon;
 
+
 	public float health;
 
 	void Start ()
@@ -19,14 +20,13 @@ public class Player : MonoBehaviour {
 		{
 			if (hitInfo.collider.tag == "Moon")
 			{
-				print("in moon!");
 				health -= 0.1f;
 			}
 		}
 
 		if (health <= 0)
 		{
-			print("dead!");
+			// dead
 		}
 	}
 }

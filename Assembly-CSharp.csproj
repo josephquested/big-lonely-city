@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\GameGenerator.cs" />
      <Compile Include="Assets\Scripts\Glimpse.cs" />
      <Compile Include="Assets\Scripts\GlimpseSpawner.cs" />
+     <Compile Include="Assets\Scripts\Moon.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\Packages\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Packages\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
