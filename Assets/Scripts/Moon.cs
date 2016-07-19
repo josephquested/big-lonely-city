@@ -16,6 +16,7 @@ public class Moon : MonoBehaviour {
 	{
 		FindPlayer();
 		UpdateVolume();
+		UpdateLight();
 	}
 
 	void FindPlayer ()
@@ -36,5 +37,10 @@ public class Moon : MonoBehaviour {
 		{
 			audioSource.volume = 0.2f;
 		}
+	}
+
+	void UpdateLight ()
+	{
+		lightSource.color = new Color(0.3f + (1 - (player.sanity / 100)), 0.3f, 0.4f, 1);
 	}
 }

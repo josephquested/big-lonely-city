@@ -4,9 +4,8 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	Transform moon;
 	public bool inLight;
-
-
-	public float health;
+	public float sanity;
+	public float sanityDrain;
 
 	void Start ()
 	{
@@ -15,15 +14,11 @@ public class Player : MonoBehaviour {
 
 	void Update ()
 	{
-		UpdateLightStatus();
-		
-		if (health <= 0)
-		{
-			// dead
-		}
+		DetectLight();
+		UpdateSanity();
 	}
 
-	void UpdateLightStatus ()
+	void DetectLight ()
 	{
 		RaycastHit hitInfo;
 
@@ -37,6 +32,14 @@ public class Player : MonoBehaviour {
 			{
 				inLight = false;
 			}
+		}
+	}
+
+	void UpdateSanity ()
+	{
+		if (inLight)
+		{
+			sanity -= sanityDrain;
 		}
 	}
 }
